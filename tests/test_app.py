@@ -1,4 +1,11 @@
+import os
+import sys
 import pytest
+
+# Dodaj katalog nadrzędny do sys.path, aby uzyskać dostęp do modułu app.py
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+# Importuj aplikację Flask
 from app import app
 
 @pytest.fixture
